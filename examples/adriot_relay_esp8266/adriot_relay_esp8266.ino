@@ -1,7 +1,7 @@
 
 #include <ADRIOT_relay.h>
 
-relaymanagement relay_managment;
+relayManagement relay_managment;
 int 			relayId;
 
 void setup()

@@ -26,13 +26,13 @@
 	};
 
 
-	class relaymanagement
+	class relayManagement
 	{
 	private:
 		int _pos = 0;
 	public:
-		relaymanagement();
-		~relaymanagement(){};
+		relayManagement();
+		~relayManagement(){};
 
 		void create 	(int value, int & result);
 
