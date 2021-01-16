@@ -3,24 +3,24 @@
 #define MAX_RELAY 10
 relayClass 	* relayClassArray[MAX_RELAY];
 
-relaymanagement::relaymanagement(){
+relayManagement::relayManagement(){
 
 }
 
-void relaymanagement::create(int value, int & result){
+void relayManagement::create(int value, int & result){
 	relayClassArray[_pos] = new relayClass(value);
 	_pos++;
 }
 
-void relaymanagement::setPullup(boolean value){
+void relayManagement::setPullup(boolean value){
 	for (int i = 0; i < MAX_RELAY; ++i) {relayClassArray[i]->setPullup(value);}
 }
 
-void relaymanagement::setPullup(int pos, boolean value){
+void relayManagement::setPullup(int pos, boolean value){
 	relayClassArray[pos]->setPullup(value);
 }
 
-relayClass * relaymanagement::relay(int pos){
+relayClass * relayManagement::relay(int pos){
 	return relayClassArray[pos];
 }
 
