@@ -1,9 +1,8 @@
 
 #ifndef RELAY_H
 	#define RELAY_H
-
 	#include <Arduino.h>
-
+	#include <ArduinoJson.h>
 
 	class relayClass
 	{
@@ -13,11 +12,15 @@
 
 	    void 	open();
 	    void 	close();
+	    void 	toggle();
 
 	    void 	setStatus(boolean value);
 	    void 	setPullup(boolean value);
 
-	    boolean	getStatus();
+	    void	getStatus(boolean & ret);
+
+	    void 	json(JsonObject & root);
+	    void 	domoticzJson(JsonObject & root);
 
 	private:
 	    boolean 	_pullup = true;
@@ -26,20 +29,20 @@
 	};
 
 
-	class relayManagement
+	class relayManagment
 	{
 	private:
 		int _pos = 0;
 	public:
-		relayManagement();
-		~relayManagement(){};
+		relayManagment();
+		~relayManagment(){};
 
 		void create 	(int value, int & result);
 
 		void setPullup 	(boolean value);
 		void setPullup 	(int pos, boolean value);
 
-		relayClass * relay(int pos);
+		relayClass * module(int pos);
 	};
 
 #endif // RELAY_H
