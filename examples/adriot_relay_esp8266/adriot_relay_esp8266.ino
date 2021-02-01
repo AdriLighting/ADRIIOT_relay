@@ -1,5 +1,5 @@
 
-#include <ADRIOT_relay.h>
+#include <adriiot_relay.h>
 
 relayManagment relay_managment;
 int 			relayId;
